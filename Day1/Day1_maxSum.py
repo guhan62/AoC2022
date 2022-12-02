@@ -1,7 +1,7 @@
 import heapq
 
 def getFattestElf():
-    with open('./Day1_input') as elves_list:
+    with open('./test.txt') as elves_list:
         calorie_feed = elves_list.read().splitlines()
         heap = []
         elf_calories = 0
@@ -14,7 +14,7 @@ def getFattestElf():
         return -heapq.heappop(heap)
 
 def getFirst3FattestElves():
-    with open('./Day1_input') as elves_list:
+    with open('./test.txt') as elves_list:
         calorie_feed = elves_list.read().splitlines()
         heap = []
         elf_calories = 0
