@@ -24,8 +24,9 @@ def findCommonItemsInGroups():
         sacks = sacks_list.read().splitlines()
         i = 0
         while((i*6)+6 <= len(sacks)):
-            # 1. Union 3 Sacks of a Group
-            # 2. Intersect 2 Groups to find common
+            # 1. Map 1Group == 3Sacks -> 3Sets
+            # 2. Reduce 3Sets by intersecting each group common items
+            # 3. Union All common items & find score based on assigned priority
             group_1 = functools.reduce( lambda a,b: a&b , map(lambda group_sack : set(group_sack), sacks[i*6:(i*6)+3]) )
             group_2 = functools.reduce( lambda a,b: a&b , map(lambda group_sack : set(group_sack), sacks[(i*6)+3:(i*6)+6]) )
             common_items = group_1 | group_2
