@@ -1,5 +1,9 @@
 from collections import Counter
 
+class Window:
+    def __init__(self, capacity = 4):
+        pass
+        
 def findStreamStart(end_char = 4):
     with open('./puzzle.txt') as tc_feed:
         test_cases = tc_feed.read().splitlines()
